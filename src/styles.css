@@ -1,22 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #bbf7d0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  min-height: 100vh;
+}
+
 .todo-app {
-    font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+  border: 1px solid #dcfce7;
+}
+
+.todo-app h1 {
+  text-align: center;
+  color: #166534;
+  font-size: 1.875rem;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+}
+
+/* Form styling */
+.todo-app form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.todo-app input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #dcfce7;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+  color: #0f172a;
+}
+
+.todo-app input:focus {
+  outline: none;
+  border-color: #86efac;
+  box-shadow: 0 0 0 2px rgba(134, 239, 172, 0.2);
+}
+
+.todo-app input::placeholder {
+  color: #64748b;
+}
+
+.todo-app button {
+  padding: 10px 16px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.todo-app button:hover {
+  background: #16a34a;
 }
 
 /** add todo **/
 .add-todo {
-    margin-left: 0.5rem;
+  margin-left: 8px;
+  padding: 10px 16px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-todo:hover {
+  background: #16a34a;
 }
 
 /** todo list **/
 .todo-list {
-    margin-top: 1rem;
-    text-align: left;
-    list-style: none;
+  margin-top: 1rem;
+  text-align: left;
+  list-style: none;
+  padding: 0;
 }
 
 /** todo item **/
 .todo-item {
-    font-family: monospace;
-    cursor: pointer;
-    line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 12px;
+  margin-bottom: 6px;
+  background: #f0fdf4;
+  border-radius: 6px;
+  border-left: 3px solid #86efac;
+  transition: background-color 0.2s ease;
+  color: #0f172a;
+}
+
+.todo-item:hover {
+  background: #dcfce7;
+}
+
+.todo-list:empty::after {
+  content: "No todos, yay!";
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-style: italic;
+  background: #f8fafc;
+  border: 2px dashed #a3e635;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .todo-app {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .todo-app form {
+    flex-direction: column;
+  }
+
+  .todo-app button,
+  .add-todo {
+    margin-top: 8px;
+    margin-left: 0;
+  }
 }
